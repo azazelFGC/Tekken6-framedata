@@ -128,7 +128,7 @@
             "input": "3,3",
             "range": "m,h",
             "DMG": "14,12",
-            "speed": "nd"
+            "speed": "nd",
             "block": "-8",
             "hit": "0",
             "ch": "0"
@@ -137,7 +137,7 @@
             "input": "3,3,4",
             "range": "nd",
             "DMG": "14,12,26",
-            "speed": "m,h,h"
+            "speed": "m,h,h",
             "block": "-9",
             "hit": "KD",
             "ch": "KD"
@@ -146,7 +146,7 @@
             "input": "3,3,4 ~b h",
             "range": "nd",
             "DMG": "14,12,26",
-            "speed": "m,h,h"
+            "speed": "m,h,h",
             "block": "-9?",
             "hit": "KD",
             "ch": "KD"
@@ -164,7 +164,7 @@
             "input": "4:3",
             "range": "m,m",
             "DMG": "9,12",
-            "speed": "17"
+            "speed": "17",
             "block": "-16",
             "hit": "KD",
             "ch": "KD"
@@ -173,7 +173,7 @@
             "input": "4:3,3",
             "range": "m,m,h",
             "DMG": "9,12,27",
-            "speed": "nd"
+            "speed": "nd",
             "block": "-3",
             "hit": "KD",
             "ch": "KD"
