@@ -204,8 +204,11 @@ window.addEventListener("DOMContentLoaded", async () => {
     indexes.chars.forEach((value) => {
       const a = document.createElement("a");
       a.className =
-        " px-2 text-nowrap sm:w-full hover:bg-pink-600/20 hover:text-100 border-b-pink-700 bg-rged-600  sm:p-4 from-pink-900/30 to-pink-900/70";
-      a.innerText = value;
+        " px-2 text-nowrap flex items-center  sm:w-full hover:bg-pink-600/20 border-b-pink-700  sm:p-4 from-pink-900/30 to-pink-900/70";
+      const aText = document.createElement("p");
+      aText.innerText = value;
+      aText.className = "";
+      a.append(aText);
       a.href = "#" + value;
       mainNav.append(a);
     });
