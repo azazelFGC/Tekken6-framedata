@@ -12,3 +12,9 @@ a.active {
 th {
   background: #05020c;
 }
+tr {
+  transition: 0.9s background ease-in-out;
+}
+tr:hover {
+  transition: 0.9s background-color ease-in-out;
+}
