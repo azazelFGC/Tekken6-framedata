@@ -66,7 +66,7 @@ const renderFrameData = (characterData) => {
     ["input", "range", "DMG", "speed", "block", "hit", "ch"].forEach((data) => {
       const td = document.createElement("td");
       td.innerText = input[data] === undefined ? "?" : input[data];
-      td.className = " p-2 border-x-pink-950/70 border-x-1";
+      td.className = " p-2 border-r-pink-950/70 border-r-1";
       tr.append(td);
       tr.onclick = () => {
         tr.classList.toggle("bg-gradient-to-r");
@@ -75,7 +75,7 @@ const renderFrameData = (characterData) => {
     });
 
     tr.className =
-      "bg-pink-950/10 border-t-1 cursor-pointer text-nowrap border-t-pink-950/45 hover:border-l-pink-950/20 border-x-pink-900/50 border-r-1 hover:bg-gradient-to-r from-pink-950/90 to-pink-950/70";
+      "cursor-pointer text-nowrap bg-pink-950/10 border-t-1 border-t-pink-950/45 border-x-pink-900/50 border-x-1 hover:bg-gradient-to-r from-pink-950/90 to-pink-950/70";
     mainBody.append(tr);
   };
   const target = document.querySelector("#main-container");
@@ -159,55 +159,55 @@ const renderFrameData = (characterData) => {
   const renderTableUnique = (characterData) => {
     const div = document.createElement("div");
 
-    div.className = "max-h-full flex flex-col gap-2 h-fjull  w-full";
+    div.className = "max-h-full gap-2 w-full";
     div.innerHTML = ` 
-              <h1 class="h-min  text-gray-100 ">Geral </h1>
+               <h1 class="h-min  text-gray-100 "></h1>
               <div id="table-unique-container"}
                 class="max-w-full h-95/100 max-h-d130 sm:max-h-200 bg-gray-950/90 flejx bg-gradient-to-r from-gray-950/80 from-20% to-black/50 "
               >
                
                 <div class="h-full   overflow-x-auto bg-gradient-to-r from-gray-950 from-20% to-pink-900/0    max-w-full ">
                   <table
-                    class=" table-auto sm:w-200 bordder-y-1 border-t-pink-950 border-b-pink-950"
+                    class=" table-auto sm:w-200 "
                   >
-                    <thead class="text-gray-300      bordjer-x-pink-800 bordder-r-1">
+                    <thead class="text-gray-300 ">
                       <tr class="">
-                        <th class="p-2 sticky top-0  p-2 border-x-pink-950/70 border-x-1">
-                          <div class="flex w-full">
+                        <th class="p-2 sticky top-0   1">
+                          <div class="flex w-full ">
                             <p>INPUT</p>
                           </div>
                         </th>
-                        <th class="p-2 sticky top-0 p-2 border-x-pink-950/70 border-x-1">
-                          <div class="flex w-full">
+                        <th class="p-2 sticky top-0  ">
+                          <div class="flex w-full ">
                             <p>RANGE</p>
                           </div>
                         </th>
-                        <th class="p-2 sticky top-0 p-2 border-x-pink-950/70 border-x-1">
-                          <div class="flex w-full">
+                        <th class="p-2 sticky top-0  ">
+                          <div class="flex w-full ">
                             <p>DMG</p>
                           </div>
                         </th>
 
-                        <th class="p-2 sticky top-0 p-2 border-x-pink-950/70 border-x-1">
-                          <div class="flex w-full">
+                        <th class="p-2 sticky top-0  ">
+                          <div class="flex w-full ">
                             <p>SPEED</p>
                           </div>
                         </th>
 
-                        <th class="p-2 sticky top-0 p-2 border-x-pink-950/70 border-x-1">
-                          <div class="flex w-full">
+                        <th class="p-2 sticky top-0  ">
+                          <div class="flex w-full ">
                             <p>BLOCK</p>
                           </div>
                         </th>
 
-                        <th class="p-2 sticky top-0 p-2 border-x-pink-950/70 border-x-1">
-                          <div class="flex w-full">
+                        <th class="p-2 sticky top-0  ">
+                          <div class="flex w-full ">
                             <p>HIT</p>
                           </div>
                         </th>
 
-                        <th class="p-2 sticky top-0 p-2 border-x-pink-950/70 border-x-1">
-                          <div class="flex w-full">
+                        <th class="p-2 sticky top-0  ">
+                          <div class="flex w-full ">
                             <p>CH</p>
                           </div>
                         </th>
@@ -226,12 +226,9 @@ const renderFrameData = (characterData) => {
 
       const tdAction = document.createElement("td");
       tdAction.innerText = action.action;
-      tdAction.className = "p-2 text-pink-600/60 text-lg font-blackf ";
+      tdAction.className = "p-2 text-pink-600/60 text-lg";
       trAction.append(tdAction);
-      trAction.onclick = () => {
-        trAction.classList.toggle("bg-gradient-to-r");
-        trAction.classList.toggle("text-white/80");
-      };
+
       mainBody.append(trAction);
       action.data.forEach((input) => {
         createTr(mainBody, input);
@@ -247,7 +244,6 @@ const addCurrentAStyle = (currentA) => {
   currentA.classList.add("text-lg");
 };
 window.addEventListener("hashchange", async () => {
-  console.log("TESTEt");
   try {
     const pastA = document.querySelector(`a.sm\\:bg-gradient-to-l`);
 
