@@ -1,6 +1,6 @@
 @import "tailwindcss";
 * {
-  scrollbar-color: #ff3f993b #f0f0f000;
+  scrollbar-color: oklch(54.742% 0.24331 262.725 / 0.4) #00000041;
 }
 a.active {
   background: oklch(65.613% 0.24084 353.961 / 0.404);
@@ -10,7 +10,7 @@ a.active {
   height: 90%;
 }
 th {
-  background: #05020c;
+  background: #000000;
 }
 tr {
   transition: 0.9s background ease-in-out;

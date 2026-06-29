@@ -66,96 +66,22 @@ const renderFrameData = (characterData) => {
     ["input", "range", "DMG", "speed", "block", "hit", "ch"].forEach((data) => {
       const td = document.createElement("td");
       td.innerText = input[data] === undefined ? "?" : input[data];
-      td.className = " p-2 border-r-pink-950/70 border-r-1";
+      td.className = "p-2 border-y-zinc-800 border-x-zinc-900 border-1";
       tr.append(td);
       tr.onclick = () => {
         tr.classList.toggle("bg-gradient-to-r");
-        tr.classList.toggle("text-white/80");
+        tr.classList.toggle("text-blue-200/80");
       };
     });
 
     tr.className =
-      "cursor-pointer text-nowrap bg-pink-950/10 border-t-1 border-t-pink-950/45 border-x-pink-900/50 border-x-1 hover:bg-gradient-to-r from-pink-950/90 to-pink-950/70";
+      "cursor-pointer text-nowrap   hover:bg-gradient-to-r from-slate-900/70 to-gray-900/70";
     mainBody.append(tr);
   };
   const target = document.querySelector("#main-container");
   target.innerHTML = ``;
   console.log("here" + characterData);
-  const renderMultipleTables = (characterData) => {
-    characterData.frames.forEach((action) => {
-      const div = document.createElement("div");
 
-      div.className = "max-h-full flex flex-col gap-2 h-fjull  w-full";
-
-      div.innerHTML = ` 
-              <h1 class="h-min  text-gray-100 ">${action.action} </h1>
-              <div id=${slugify(action.action)}
-                class="max-w-full h-95/100 max-h-d130 sm:max-h-200 bg-gray-950/90 flejx bg-gradient-to-r from-gray-950/80 from-20% to-black/50 "
-              >
-               
-                <div class="h-full   overflow-x-auto bg-gradient-to-r from-gray-950 from-20% to-pink-900/0    max-w-full ">
-                  <table
-                    class=" table-auto sm:w-200 bordder-y-1 border-t-pink-950 border-b-pink-950"
-                  >
-                    <thead class="text-gray-300      bordjer-x-pink-800 bordder-r-1">
-                      <tr class="">
-                        <th class="p-2 sticky top-0  p-2 border-x-pink-950/70 border-x-1">
-                          <div class="flex w-full">
-                            <p>INPUT</p>
-                          </div>
-                        </th>
-                        <th class="p-2 sticky top-0 p-2 border-x-pink-950/70 border-x-1">
-                          <div class="flex w-full">
-                            <p>RANGE</p>
-                          </div>
-                        </th>
-                        <th class="p-2 sticky top-0 p-2 border-x-pink-950/70 border-x-1">
-                          <div class="flex w-full">
-                            <p>DMG</p>
-                          </div>
-                        </th>
-
-                        <th class="p-2 sticky top-0 p-2 border-x-pink-950/70 border-x-1">
-                          <div class="flex w-full">
-                            <p>SPEED</p>
-                          </div>
-                        </th>
-
-                        <th class="p-2 sticky top-0 p-2 border-x-pink-950/70 border-x-1">
-                          <div class="flex w-full">
-                            <p>BLOCK</p>
-                          </div>
-                        </th>
-
-                        <th class="p-2 sticky top-0 p-2 border-x-pink-950/70 border-x-1">
-                          <div class="flex w-full">
-                            <p>HIT</p>
-                          </div>
-                        </th>
-
-                        <th class="p-2 sticky top-0 p-2 border-x-pink-950/70 border-x-1">
-                          <div class="flex w-full">
-                            <p>CH</p>
-                          </div>
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody id=${"main-body-" + slugify(action.action)} class="text-gray-500" > </tbody>
-                  </table>
-                </div></div>`;
-
-      target.append(div);
-
-      const mainBody = document.querySelector(
-        "#main-body-" + slugify(action.action),
-      );
-      mainBody.innerHTML = "";
-      action.data.forEach((input) => {
-        // renderMobileTr();
-        createTr(mainBody, input);
-      });
-    });
-  };
   const renderTableUnique = (characterData) => {
     const div = document.createElement("div");
 
@@ -163,38 +89,38 @@ const renderFrameData = (characterData) => {
     div.innerHTML = ` 
                <h1 class="h-min  text-gray-100 "></h1>
               <div id="table-unique-container"}
-                class="max-w-full h-95/100 max-h-d130 sm:max-h-200 bg-gray-950/90 flejx bg-gradient-to-r from-gray-950/80 from-20% to-black/50 "
+                class="max-w-full h-95/100 max-h-d130 sm:max-h-200 bg-black/70 bg-gradijent-to-r from-gray-950/40 from-20% to-black/40 "
               >
                
-                <div class="h-full   overflow-x-auto bg-gradient-to-r from-gray-950 from-20% to-pink-900/0    max-w-full ">
+                <div class="h-full overflow-x-auto max-w-full ">
                   <table
-                    class=" table-auto sm:w-200 "
+                    class="table-auto sm:w-200"
                   >
-                    <thead class="text-gray-300 ">
+                    <thead class="text-gray-300  border-x-zinc-900 border-x-1">
                       <tr class="">
-                        <th class="p-2 sticky top-0   1">
+                        <th class="p-2 sticky top-0">
                           <div class="flex w-full ">
                             <p>INPUT</p>
                           </div>
                         </th>
-                        <th class="p-2 sticky top-0  ">
+                        <th class="p-2 sticky top-0">
                           <div class="flex w-full ">
                             <p>RANGE</p>
                           </div>
                         </th>
-                        <th class="p-2 sticky top-0  ">
+                        <th class="p-2 sticky top-0">
                           <div class="flex w-full ">
                             <p>DMG</p>
                           </div>
                         </th>
 
-                        <th class="p-2 sticky top-0  ">
+                        <th class="p-2 sticky top-0">
                           <div class="flex w-full ">
                             <p>SPEED</p>
                           </div>
                         </th>
 
-                        <th class="p-2 sticky top-0  ">
+                        <th class="p-2 sticky top-0">
                           <div class="flex w-full ">
                             <p>BLOCK</p>
                           </div>
@@ -206,14 +132,14 @@ const renderFrameData = (characterData) => {
                           </div>
                         </th>
 
-                        <th class="p-2 sticky top-0  ">
+                        <th class="p-2 sticky top-0">
                           <div class="flex w-full ">
                             <p>CH</p>
                           </div>
                         </th>
                       </tr>
                     </thead>
-                    <tbody id=${"table-unique"} class="text-gray-500" > </tbody>
+                    <tbody id=${"table-unique"} class="text-blue-300/55" > </tbody>
                   </table>
                 </div></div>`;
     target.append(div);
@@ -222,11 +148,11 @@ const renderFrameData = (characterData) => {
     characterData.frames.forEach((action) => {
       const trAction = document.createElement("tr");
       trAction.className = `
-       border-t-1 cursor-pointer text-nowrap border-t-pink-950/45 hover:border-l-pink-950/20 border-x-pink-900/50 border-r-1 hover:bg-gradient-to-r from-pink-950/90 to-pink-950/70`;
+       text-nowrap border-x-zinc-900 border-x-1`;
 
       const tdAction = document.createElement("td");
       tdAction.innerText = action.action;
-      tdAction.className = "p-2 text-pink-600/60 text-lg";
+      tdAction.className = "p-2 text-blue-400/80 text-lg";
       trAction.append(tdAction);
 
       mainBody.append(trAction);
@@ -237,27 +163,25 @@ const renderFrameData = (characterData) => {
   };
   renderTableUnique(characterData);
 };
-const addCurrentAStyle = (currentA) => {
-  currentA.classList.add("sm:bg-gradient-to-l");
-  currentA.classList.add("text-white");
-  currentA.classList.add("font-black");
-  currentA.classList.add("text-lg");
+const toggleCurrentAStyle = (currentA) => {
+  currentA.classList.toggle("sm:bg-black/65");
+  currentA.classList.toggle("text-blue-500");
+  currentA.classList.toggle("sm:border-t-gray-400");
+  currentA.classList.toggle("sm:border-b-gray-600");
+  currentA.classList.toggle("sm:border-x-gray-600");
+  currentA.classList.toggle("sm:border-l-transparent");
 };
 window.addEventListener("hashchange", async () => {
   try {
-    const pastA = document.querySelector(`a.sm\\:bg-gradient-to-l`);
-
-    pastA.classList.toggle("text-lg");
-    pastA.classList.toggle("text-white");
-    pastA.classList.toggle("font-black");
-    pastA.classList.toggle("sm:bg-gradient-to-l");
+    const pastA = document.querySelector(`a.sm\\:bg-black\\/65`);
+    toggleCurrentAStyle(pastA);
   } catch (err) {}
   try {
     const currentA = document.querySelector(
       `nav a[href="${window.location.hash}"]`,
     );
     if (currentA) {
-      addCurrentAStyle(currentA);
+      toggleCurrentAStyle(currentA);
     }
 
     const character = window.location.hash.substring(1);
@@ -272,7 +196,7 @@ window.addEventListener("DOMContentLoaded", async () => {
     indexes.chars.forEach((value) => {
       const a = document.createElement("a");
       a.className =
-        " px-2 text-nowrap flex items-center  sm:w-full hover:bg-pink-600/20 border-b-pink-700  sm:p-4 from-pink-900/30 to-pink-900/70";
+        "border-2 rounded-r-xl border-transparent px-2 text-nowrap flex items-center sm:w-full hover:bg-black/65 sm:p-4 ";
       const aText = document.createElement("p");
       aText.innerText = value;
       aText.className = "";
@@ -285,7 +209,7 @@ window.addEventListener("DOMContentLoaded", async () => {
         `nav a[href="${window.location.hash}"]`,
       );
       if (currentA) {
-        addCurrentAStyle(currentA);
+        toggleCurrentAStyle(currentA);
       }
       const character = window.location.hash.substring(1);
 
